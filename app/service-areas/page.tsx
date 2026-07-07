@@ -1,0 +1,42 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { CtaBand } from "@/components/cta-band";
+import { SectionHeading } from "@/components/section-heading";
+import { serviceAreas } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "Service Areas",
+  description: "C&B serves Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, Middleton, and the surrounding Treasure Valley.",
+};
+
+export default function ServiceAreasPage() {
+  return (
+    <main>
+      <section className="bg-black px-4 py-24 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-4 text-xs font-black uppercase tracking-[.24em] text-flame">Service Areas</p>
+          <h1 className="max-w-5xl text-5xl font-black leading-[.95] tracking-tight md:text-7xl">Gas piping and mechanical service throughout the Treasure Valley.</h1>
+          <p className="mt-7 max-w-3xl text-lg leading-8 text-white/72">C&amp;B serves homeowners, builders, shops, remodels, ADUs, and custom projects across the Treasure Valley.</p>
+        </div>
+      </section>
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading eyebrow="Local service" title="Choose your area." copy="Each area page highlights C&B's gas piping, outdoor fuel lines, HVAC, water heaters, mini splits, sheet metal, and remodel support for that community." />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {serviceAreas.map((area) => (
+              <Link key={area.slug} href={`/service-areas/${area.slug}`} className="rounded-lg border border-zinc-200 bg-zinc-50 p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-premium">
+                <div className="flex items-start justify-between gap-4">
+                  <h2 className="text-3xl font-black text-zinc-950">{area.city}</h2>
+                  <ArrowUpRight className="mt-1 h-5 w-5 text-flame" />
+                </div>
+                <p className="mt-3 text-zinc-600">{area.summary}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+      <CtaBand />
+    </main>
+  );
+}
