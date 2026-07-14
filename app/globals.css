@@ -29,7 +29,7 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-[17px] leading-7 text-foreground antialiased sm:text-lg;
   }
 }
 

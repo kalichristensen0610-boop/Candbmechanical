@@ -12,16 +12,16 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <main>
-      <section className="bg-black px-4 py-24 text-white sm:px-6 lg:px-8">
+      <section className="bg-black px-4 py-16 text-white sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <p className="mb-4 text-xs font-black uppercase tracking-[.24em] text-flame">Recent Projects</p>
-          <h1 className="max-w-5xl text-5xl font-black leading-[.95] tracking-tight md:text-7xl">Real installations. Clean details. Work you can inspect.</h1>
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-white/72">
+          <h1 className="max-w-5xl text-6xl font-black leading-[.95] tracking-tight md:text-8xl">Real installations. Clean details. Work you can inspect.</h1>
+          <p className="mt-5 max-w-3xl text-xl leading-8 text-white/72">
             Take a look at some of our recent heating, cooling, gas line, and home comfort projects throughout Treasure Valley and Valley County.
           </p>
         </div>
       </section>
-      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionHeading eyebrow="Proof of work" title="Recent Projects" copy="Browse field photos from gas piping, pool heater lines, underground fuel lines, fire features, HVAC, water heaters, mini splits, and sheet metal projects." />
           <div className="mt-10">

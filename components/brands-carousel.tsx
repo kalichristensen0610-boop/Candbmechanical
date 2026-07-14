@@ -4,12 +4,12 @@ export function BrandsCarousel() {
   const brands = [...trustedBrands, ...trustedBrands];
 
   return (
-    <section className="overflow-hidden bg-white px-4 py-16 sm:px-6 lg:px-8">
+    <section className="overflow-hidden bg-white px-4 py-14 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Brands We Trust</p>
           <h2 className="text-4xl font-extrabold leading-tight text-zinc-950 md:text-5xl">Industry-leading equipment and materials.</h2>
-          <p className="mt-5 text-lg leading-8 text-zinc-600">
+          <p className="mt-4 text-xl leading-8 text-zinc-600">
             We partner with industry-leading manufacturers to provide dependable heating, cooling, gas, and home comfort solutions built to last.
           </p>
         </div>
@@ -22,9 +22,6 @@ export function BrandsCarousel() {
             ))}
           </div>
         </div>
-        <p className="mt-4 text-sm text-zinc-500">
-          Placeholder brand marks are shown until approved transparent logo files are uploaded.
-        </p>
       </div>
     </section>
   );

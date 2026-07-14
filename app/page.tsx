@@ -8,7 +8,7 @@ import { GoogleReviewCta } from "@/components/google-review-cta";
 import { PhotoGrid } from "@/components/photo-grid";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
-import { serviceAreaSentence, services, whyGary } from "@/lib/data";
+import { services, whyGary } from "@/lib/data";
 
 const featuredServices = services.slice(0, 6);
 const benefits = [
@@ -32,21 +32,23 @@ const benefits = [
 export default function HomePage() {
   return (
     <main>
-      <section className="relative isolate min-h-[calc(100vh-5rem)] overflow-hidden bg-zinc-950 text-white">
+      <section className="relative isolate min-h-[calc(82vh-5rem)] overflow-hidden bg-zinc-950 text-white">
         <Image src="/images/projects/gas-meter-black-iron-regulator.jpg" alt="C&B black iron gas piping installation" fill className="object-cover opacity-62" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/88 to-zinc-950/18" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_28%,rgba(214,32,39,.24),transparent_34%),linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:auto,52px_52px,52px_52px]" />
-        <div className="relative mx-auto flex min-h-[calc(100vh-5rem)] max-w-7xl items-center px-4 py-20 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h1 className="max-w-5xl text-5xl font-extrabold leading-[.92] tracking-tight md:text-7xl lg:text-8xl">Idaho&apos;s Gas Piping Specialist</h1>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-white/76 md:text-xl">
-              C&amp;B designs and installs safe, dependable gas piping, propane, HVAC, heating, cooling, and mechanical systems for homeowners, builders, remodels, ADUs, shops, pools, fire pits, water heaters, and custom projects throughout Treasure Valley and Valley County.
-            </p>
-            <p className="mt-5 max-w-3xl text-sm font-bold uppercase tracking-wide text-white/62">{serviceAreaSentence}</p>
-            <div className="mt-9 flex flex-wrap gap-3">
+        <div className="relative mx-auto flex min-h-[calc(82vh-5rem)] max-w-7xl items-center justify-center px-4 py-14 text-center sm:px-6 lg:px-8 lg:text-left">
+          <div className="max-w-5xl">
+            <div className="mb-5 flex flex-wrap justify-center gap-2 lg:justify-start">
+              {["Outdoor Fire", "Propane Systems", "Gas Lines", "Pool Heaters", "Appliance Hookups"].map((item) => (
+                <span key={item} className="rounded-full bg-flame px-4 py-2 text-sm font-black uppercase tracking-wide text-white sm:text-base">
+                  {item}
+                </span>
+              ))}
+            </div>
+            <h1 className="mx-auto max-w-5xl text-6xl font-extrabold leading-[.9] tracking-tight sm:text-7xl md:text-8xl lg:mx-0 lg:text-8xl">Idaho&apos;s Gas Piping Specialist</h1>
+            <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
               <Button asChild size="lg"><Link href="tel:2089722102">Call Now</Link></Button>
               <Button asChild size="lg"><Link href="/contact">Request Free Estimate</Link></Button>
-              <Button asChild size="lg" variant="secondary"><Link href="/services">View Services</Link></Button>
             </div>
           </div>
         </div>
@@ -62,7 +64,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-18 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.82fr_1.18fr] lg:items-center">
           <SectionHeading eyebrow="What C&B does" title="Natural gas, propane, and mechanical work built with care." />
           <div className="grid gap-4 sm:grid-cols-2">
@@ -80,37 +82,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-zinc-950 px-4 py-20 text-white sm:px-6 lg:px-8">
+      <section className="bg-zinc-950 px-4 py-14 text-white sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
           <div>
-            <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Meet Gary</p>
-            <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">Honest work, quality craftsmanship, and customer-first guidance.</h2>
+            <p className="mb-3 text-sm font-black uppercase tracking-[.2em] text-flame">About C&amp;B</p>
+            <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">Trusted gas piping work done safely and correctly.</h2>
           </div>
-          <div className="space-y-5 text-lg leading-8 text-white/70">
+          <div className="space-y-4 text-xl leading-8 text-white/70">
             <p>
-              Gary has built his reputation on honest work, quality craftsmanship, and taking care of customers the right way. With years of experience serving homeowners throughout Idaho, he understands every project is an investment in your home&apos;s comfort, safety, efficiency, and long-term value.
+              C&amp;B has built a reputation on honest work, dependable service, and gas piping installations completed safely and correctly.
             </p>
             <p>
-              Whether a project involves heating and cooling equipment, gas lines, propane service, or coordinating with Intermountain Gas, Gary works to make the experience as straightforward and stress-free as possible.
-            </p>
-            <p className="font-black text-white">
-              His goal is simple: provide honest recommendations, quality workmanship, clear communication, and service that customers can trust for years to come.
+              From natural gas and propane systems to HVAC, water heaters, outdoor fire features, and remodel support, C&amp;B keeps the work clean, clear, and built to last.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl rounded-lg border border-zinc-200 bg-zinc-50 p-7 shadow-sm md:p-10">
           <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Start-to-Finish Project Coordination</p>
           <h2 className="text-3xl font-extrabold leading-tight text-zinc-950 md:text-5xl">One knowledgeable point of contact from planning to final installation.</h2>
-          <p className="mt-5 max-w-4xl text-lg leading-8 text-zinc-600">
+          <p className="mt-4 max-w-4xl text-xl leading-8 text-zinc-600">
             From equipment installation to coordinating with propane providers and Intermountain Gas, Gary helps guide the entire process so customers aren&apos;t left navigating multiple companies on their own. His goal is to make every project as smooth, simple, and stress-free as possible.
           </p>
         </div>
       </section>
 
-      <section className="bg-zinc-100 px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-zinc-100 px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionHeading eyebrow="Why Homeowners Choose Gary" title="Clear communication and dependable project support." />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -128,7 +127,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-zinc-100 px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-zinc-100 px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading eyebrow="Core services" title="Gas piping and mechanical services for serious residential projects." copy="C&B leads with natural gas and propane expertise, then supports the full mechanical picture when your project needs more." />
@@ -142,7 +141,7 @@ export default function HomePage() {
 
       <BrandsCarousel />
 
-      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionHeading eyebrow="How the work flows" title="A straightforward process from first look to final test." copy="The best gas piping work starts with a clear route, the right materials, and a plan for safe service access." />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -161,13 +160,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-zinc-950 px-4 py-20 text-white sm:px-6 lg:px-8">
+      <section className="bg-zinc-950 px-4 py-14 text-white sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Project proof</p>
               <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">Recent Projects</h2>
-              <p className="mt-5 text-lg leading-8 text-white/65">Take a look at some of our recent heating, cooling, gas line, and home comfort projects throughout Treasure Valley and Valley County.</p>
+              <p className="mt-4 text-xl leading-8 text-white/70">Take a look at recent heating, cooling, gas line, and home comfort projects throughout Treasure Valley and Valley County.</p>
             </div>
             <Button asChild variant="secondary"><Link href="/gallery">View Full Gallery</Link></Button>
           </div>
@@ -179,12 +178,12 @@ export default function HomePage() {
 
       <GoogleReviewCta />
 
-      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
           <div id="why-choose">
             <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Why choose C&amp;B?</p>
             <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">Locally owned, trusted, and detail focused.</h2>
-            <p className="mt-5 text-lg leading-8 text-zinc-600">
+            <p className="mt-4 text-xl leading-8 text-zinc-600">
               C&amp;B works on everything from custom homes and remodels to complete mechanical systems and specialty gas installations, with a primary focus on safe natural gas and propane systems throughout Treasure Valley and Valley County.
             </p>
           </div>
@@ -199,7 +198,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-zinc-100 px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-zinc-100 px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
           {benefits.map(({ title, copy, Icon }) => (
             <div key={title} className="rounded-lg bg-white p-7 shadow-sm">
@@ -211,7 +210,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.8fr_1.2fr]">
           <SectionHeading eyebrow="FAQ" title="Common gas piping questions." copy="A few quick answers before you call C&B about your project." />
           <div className="grid gap-4">

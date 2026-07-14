@@ -14,22 +14,22 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main>
-      <section className="relative overflow-hidden bg-black px-4 py-24 text-white sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-black px-4 py-16 text-white sm:px-6 lg:px-8">
         <Image src="/images/projects/sheet-metal-ductwork.jpg" alt="C&B sheet metal ductwork" fill className="object-cover opacity-42" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/88 to-black/30" />
         <div className="relative mx-auto max-w-7xl">
           <p className="mb-4 text-xs font-black uppercase tracking-[.24em] text-flame">About C&amp;B</p>
-          <h1 className="max-w-5xl text-5xl font-black leading-[.95] tracking-tight md:text-7xl">Meet Gary</h1>
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-white/72">
+          <h1 className="max-w-5xl text-6xl font-black leading-[.95] tracking-tight md:text-8xl">Meet Gary</h1>
+          <p className="mt-5 max-w-3xl text-xl leading-8 text-white/72">
             Gary has built his reputation on honest work, quality craftsmanship, and taking care of customers the right way.
           </p>
           <p className="mt-5 max-w-4xl text-sm font-bold uppercase tracking-wide text-white/62">{serviceAreaSentence}</p>
         </div>
       </section>
 
-      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_.8fr]">
-          <div className="space-y-6 text-lg leading-8 text-zinc-650">
+          <div className="space-y-4 text-xl leading-8 text-zinc-650">
             <SectionHeading title="Honest recommendations, clear communication, and work built to last." eyebrow="Owner-led workmanship" />
             <p>
               Gary has built his reputation on honest work, quality craftsmanship, and taking care of customers the right way.
@@ -79,10 +79,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl rounded-lg border border-zinc-200 bg-white p-7 shadow-sm md:p-10">
           <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Start-to-Finish Project Coordination</p>
           <h2 className="text-3xl font-extrabold leading-tight text-zinc-950 md:text-5xl">Gary helps guide the full process.</h2>
-          <p className="mt-5 max-w-4xl text-lg leading-8 text-zinc-600">
+          <p className="mt-4 max-w-4xl text-xl leading-8 text-zinc-600">
             From equipment installation to coordinating with propane providers and Intermountain Gas, Gary helps guide the entire process so customers aren&apos;t left navigating multiple companies on their own.
           </p>
-          <p className="mt-4 max-w-4xl text-lg leading-8 text-zinc-600">
+          <p className="mt-4 max-w-4xl text-xl leading-8 text-zinc-600">
             His goal is to make every project as smooth, simple, and stress-free as possible.
           </p>
         </div>

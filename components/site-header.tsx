@@ -12,12 +12,12 @@ const primaryServices = services.slice(0, 8);
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/90 text-white shadow-[0_12px_40px_rgba(0,0,0,.18)] backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:h-24 lg:gap-5 lg:px-8">
+      <div className="mx-auto flex h-24 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:h-24 lg:gap-5 lg:px-8">
         <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="C&B home">
-          <Image src="/images/brand/cb-logo-transparent.png" alt="C&B Gas Piping logo" width={250} height={167} className="h-14 w-auto object-contain sm:h-16 lg:h-20" priority />
+          <Image src="/images/brand/cb-logo-transparent.png" alt="C&B Gas Piping logo" width={250} height={167} className="h-20 w-auto object-contain sm:h-20 lg:h-20" priority />
         </Link>
 
-        <nav className="ml-auto hidden items-center gap-0.5 text-[11px] font-extrabold uppercase tracking-[.045em] text-white/82 min-[760px]:flex lg:text-[12px] xl:gap-1 xl:text-[13px]">
+        <nav className="ml-auto hidden items-center gap-0.5 text-[12px] font-extrabold uppercase tracking-[.045em] text-white/82 min-[760px]:flex lg:text-[13px] xl:gap-1 xl:text-sm">
           <NavLink href="/">Home</NavLink>
           <NavLink href="/about">About</NavLink>
           <Dropdown label="Services" href="/services">
