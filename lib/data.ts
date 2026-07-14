@@ -21,6 +21,8 @@ export const serviceAreaSentence =
 export const seoServiceAreaSentence =
   "C&B provides HVAC, heating, cooling, gas line installation, propane service, and mechanical work throughout Treasure Valley and Valley County, including Boise, Meridian, Nampa, Eagle, Star, Middleton, Kuna, Cascade, Donnelly, McCall, and surrounding Idaho communities.";
 
+export const googleReviewUrl = "https://www.google.com/search?q=c+%26+be+mechincal+nampa";
+
 export const trustedBrands = ["Ruud", "Rheem", "ecobee", "Payne", "Navien", "Samsung", "Honeywell", "Gastite", "Viega"];
 
 export const whyGary = [

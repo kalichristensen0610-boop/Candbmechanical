@@ -16,9 +16,9 @@ export default function HomePage() {
   return (
     <main>
       <section className="relative isolate min-h-[calc(82vh-5rem)] overflow-hidden bg-zinc-950 text-white">
-        <Image src="/images/projects/gas-meter-black-iron-regulator.jpg" alt="C&B black iron gas piping installation" fill className="object-cover opacity-62" priority />
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/88 to-zinc-950/18" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_28%,rgba(214,32,39,.24),transparent_34%),linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:auto,52px_52px,52px_52px]" />
+        <Image src="/images/projects/gas-meter-regulator-valves.webp" alt="C&B natural gas meter regulator and gas piping installation" fill className="object-cover object-center opacity-75" priority />
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/88 via-zinc-950/70 to-zinc-950/92" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(214,32,39,.28),transparent_34%),linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)] bg-[size:auto,52px_52px,52px_52px]" />
         <div className="relative mx-auto flex min-h-[calc(82vh-5rem)] max-w-7xl items-center justify-center px-4 py-14 text-center sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <div className="mb-5 flex flex-wrap justify-center gap-2">

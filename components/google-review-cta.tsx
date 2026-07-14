@@ -1,10 +1,7 @@
 import Link from "next/link";
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const reviewUrl =
-  process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ??
-  "https://www.google.com/search?q=C%26B+Mechanical+Gas+Piping+Idaho+reviews";
+import { googleReviewUrl } from "@/lib/data";
 
 export function GoogleReviewCta() {
   return (
@@ -23,7 +20,7 @@ export function GoogleReviewCta() {
           </p>
         </div>
         <Button asChild size="lg" className="w-full md:w-auto">
-          <Link href={reviewUrl} target="_blank" rel="noopener noreferrer">
+          <Link href={googleReviewUrl} target="_blank" rel="noopener noreferrer">
             Leave a Google Review
           </Link>
         </Button>

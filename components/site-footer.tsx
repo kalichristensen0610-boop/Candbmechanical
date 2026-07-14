@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { googleReviewUrl } from "@/lib/data";
 
 export function SiteFooter() {
   return (
@@ -28,7 +29,7 @@ export function SiteFooter() {
             ["About C&B", "/about"],
             ["Contact", "/contact"],
             ["Request an Estimate", "/contact"],
-            ["Reviews", "/#reviews"],
+            ["Reviews", googleReviewUrl],
           ]}
         />
         <FooterGroup
@@ -54,11 +55,15 @@ function FooterGroup({ title, links }: { title: string; links: string[][] }) {
     <div>
       <h3 className="text-sm font-black uppercase tracking-[.18em] text-white">{title}</h3>
       <div className="mt-4 grid gap-2 text-base text-white/68">
-        {links.map(([label, href]) => (
-          <Link key={href} href={href} className="hover:text-white">
-            {label}
-          </Link>
-        ))}
+        {links.map(([label, href]) => {
+          const isExternal = href.startsWith("http");
+
+          return (
+            <Link key={href} href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined} className="hover:text-white">
+              {label}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

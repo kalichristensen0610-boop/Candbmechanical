@@ -21,11 +21,11 @@ export function SiteHeader() {
           <NavLink href="/">Home</NavLink>
           <NavLink href="/about">About</NavLink>
           <Dropdown label="Services" href="/services">
-              <div className="grid w-[min(760px,calc(100vw-2rem))] grid-cols-2 gap-2 p-3">
+              <div className="grid w-[min(780px,calc(100vw-2rem))] grid-cols-2 gap-3 p-4">
                 {primaryServices.map((service) => (
-                  <Link key={service.slug} href={`/services/${service.slug}`} className="rounded-md border border-white/5 p-3 hover:bg-flame/20">
+                  <Link key={service.slug} href={`/services/${service.slug}`} className="rounded-md border border-white/10 bg-white/[.04] p-4 transition hover:border-flame hover:bg-flame hover:text-white">
                     <p className="font-extrabold text-white">{service.title}</p>
-                    <p className="mt-1 line-clamp-2 text-xs normal-case leading-5 tracking-normal text-white/66">{service.summary}</p>
+                    <p className="mt-1 line-clamp-2 text-xs normal-case leading-5 tracking-normal text-white/72">{service.summary}</p>
                   </Link>
                 ))}
                 <Link href="/services" className="col-span-2 rounded-md bg-flame px-4 py-3 text-center font-extrabold text-white hover:bg-red-700">
@@ -34,9 +34,9 @@ export function SiteHeader() {
               </div>
           </Dropdown>
           <Dropdown label="Service Areas" href="/service-areas">
-              <div className="grid w-[min(560px,calc(100vw-2rem))] grid-cols-3 gap-2 p-3">
+              <div className="grid w-[min(580px,calc(100vw-2rem))] grid-cols-3 gap-3 p-4">
                 {serviceAreas.map((area) => (
-                  <Link key={area.slug} href={`/service-areas/${area.slug}`} className="rounded-md border border-white/5 p-3 font-extrabold text-white hover:bg-flame/20">
+                  <Link key={area.slug} href={`/service-areas/${area.slug}`} className="rounded-md border border-white/10 bg-white/[.04] p-4 font-extrabold text-white transition hover:border-flame hover:bg-flame hover:text-white">
                     {area.city}
                   </Link>
                 ))}
@@ -76,8 +76,8 @@ function Dropdown({ label, href, children }: { label: string; href: string; chil
         <ChevronDown className="h-3.5 w-3.5 transition group-hover:rotate-180" />
       </button>
       <div className="pointer-events-none absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
-        <div className="overflow-hidden rounded-lg border border-white/15 bg-zinc-950/96 text-white shadow-[0_30px_90px_rgba(0,0,0,.38)] backdrop-blur-xl">
-          <Link href={href} className="block border-b border-white/10 px-6 py-4 text-sm font-extrabold text-white hover:bg-flame/20">
+        <div className="overflow-hidden rounded-lg border border-flame/35 bg-zinc-950 text-white shadow-[0_34px_100px_rgba(0,0,0,.65)]">
+          <Link href={href} className="block border-b border-white/10 bg-black px-6 py-4 text-sm font-extrabold text-white transition hover:bg-flame">
             {label} Overview
           </Link>
           {children}
@@ -127,7 +127,7 @@ function MobileMenu() {
 function MobileLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <Dialog.Close asChild>
-      <Link href={href} className="block rounded-md py-2 text-base font-black text-white/88 hover:text-white">
+      <Link href={href} className="block rounded-md px-3 py-2 text-base font-black text-white/88 hover:bg-white/10 hover:text-white">
         {children}
       </Link>
     </Dialog.Close>
@@ -138,7 +138,7 @@ function MobileGroup({ title, href, children }: { title: string; href: string; c
   return (
     <div>
       <MobileLink href={href}>{title}</MobileLink>
-      <div className="mt-2 grid gap-1 border-l border-white/15 pl-4 text-sm">{children}</div>
+      <div className="mt-2 grid gap-1 border-l border-white/15 pl-3 text-sm">{children}</div>
     </div>
   );
 }
