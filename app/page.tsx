@@ -16,18 +16,11 @@ export default function HomePage() {
   return (
     <main>
       <section className="relative isolate min-h-[calc(82vh-5rem)] overflow-hidden bg-zinc-950 text-white">
-        <Image src="/images/projects/gas-meter-regulator-valves.webp" alt="C&B natural gas meter regulator and gas piping installation" fill className="object-cover object-center opacity-75" priority />
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/88 via-zinc-950/70 to-zinc-950/92" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(214,32,39,.28),transparent_34%),linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)] bg-[size:auto,52px_52px,52px_52px]" />
+        <Image src="/images/hero/idaho-backyard-gas-firepit.webp" alt="Idaho backyard outdoor living space with a built-in gas fire pit" fill className="object-cover object-center opacity-90" priority />
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/72 via-zinc-950/58 to-zinc-950/78" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(214,32,39,.18),transparent_34%)]" />
         <div className="relative mx-auto flex min-h-[calc(82vh-5rem)] max-w-7xl items-center justify-center px-4 py-14 text-center sm:px-6 lg:px-8">
           <div className="max-w-5xl">
-            <div className="mb-5 flex flex-wrap justify-center gap-2">
-              {["Outdoor Fire", "Propane Systems", "Gas Lines", "Pool Heaters", "Appliance Hookups"].map((item) => (
-                <span key={item} className="rounded-full bg-flame px-4 py-2 text-sm font-black uppercase tracking-wide text-white sm:text-base">
-                  {item}
-                </span>
-              ))}
-            </div>
             <h1 className="mx-auto max-w-5xl text-6xl font-extrabold leading-[.9] tracking-tight sm:text-7xl md:text-8xl lg:text-8xl">Idaho&apos;s Gas Piping Specialist</h1>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button asChild size="lg"><Link href="tel:2089722102">Call Now</Link></Button>
