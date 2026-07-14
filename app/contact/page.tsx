@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { services } from "@/lib/data";
+import { seoServiceAreaSentence, serviceAreaSentence, services } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Request a free estimate from C&B for gas piping, HVAC, water heaters, mini splits, sheet metal, remodels, and ADUs.",
+  description: `Request a free estimate from C&B for gas piping, propane service, HVAC, heating, cooling, water heaters, mini splits, sheet metal, remodels, and ADUs. ${seoServiceAreaSentence}`,
 };
 
 export default function ContactPage() {
@@ -19,6 +19,7 @@ export default function ContactPage() {
           <p className="mt-7 max-w-3xl text-lg leading-8 text-white/72">
             For gas odor or a suspected active leak, leave the area and contact your gas provider or emergency services first. For estimates, repairs, testing, or planning, share the details below.
           </p>
+          <p className="mt-5 max-w-4xl text-sm font-bold uppercase tracking-wide text-white/62">{serviceAreaSentence}</p>
         </div>
       </section>
 
@@ -27,7 +28,7 @@ export default function ContactPage() {
           <aside>
             <h2 className="text-4xl font-black tracking-tight md:text-6xl">Free estimates for gas piping and mechanical projects.</h2>
             <p className="mt-5 text-lg leading-8 text-zinc-600">
-              Include the city, fuel type, equipment, photos if available, and any inspection notes. The form is ready for the site build; submission wiring can be connected once email or hosting details are confirmed.
+              Include the city, fuel type, equipment, photos if available, and any inspection notes. C&amp;B serves Treasure Valley and Valley County projects, including Boise, Meridian, Nampa, Eagle, Star, Middleton, Kuna, Cascade, Donnelly, McCall, and surrounding communities.
             </p>
             <div className="mt-8 rounded-lg bg-zinc-950 p-6 text-white">
               <h3 className="text-2xl font-black">Helpful details</h3>

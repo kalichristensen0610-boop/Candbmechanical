@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/cta-band";
-import { services } from "@/lib/data";
+import { serviceAreaSentence, services } from "@/lib/data";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {};
   return {
     title: service.title,
-    description: `${service.summary} C&B serves Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, Middleton, and the Treasure Valley.`,
+    description: `${service.summary} ${serviceAreaSentence}`,
   };
 }
 
@@ -48,8 +48,9 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div>
             <p className="text-lg leading-8 text-zinc-600">{service.summary}</p>
             <p className="mt-6 text-lg leading-8 text-zinc-600">
-              C&amp;B brings more than 27 years of mechanical experience to each project, with a focus on honest recommendations, clean workmanship, safe fuel delivery, and details that make the system easier to service in the future.
+              C&amp;B brings more than 27 years of mechanical experience to each project, with a focus on honest recommendations, clean workmanship, safe fuel delivery, HVAC expertise, propane service, Intermountain Gas coordination, and details that make the system easier to service in the future.
             </p>
+            <p className="mt-6 text-lg leading-8 text-zinc-600">{serviceAreaSentence}</p>
             <h2 className="mt-10 text-4xl font-black tracking-tight text-zinc-950">What this service can include</h2>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {service.bullets.map((item) => (

@@ -15,6 +15,25 @@ export type Area = {
   summary: string;
 };
 
+export const serviceAreaSentence =
+  "Proudly serving homeowners and businesses throughout Treasure Valley and Valley County, including Boise, Meridian, Nampa, Eagle, Star, Middleton, Kuna, Cascade, Donnelly, McCall, and surrounding communities.";
+
+export const seoServiceAreaSentence =
+  "C&B provides HVAC, heating, cooling, gas line installation, propane service, and mechanical work throughout Treasure Valley and Valley County, including Boise, Meridian, Nampa, Eagle, Star, Middleton, Kuna, Cascade, Donnelly, McCall, and surrounding Idaho communities.";
+
+export const trustedBrands = ["Ruud", "Rheem", "ecobee", "Payne", "Navien", "Samsung", "Honeywell", "Gastite", "Viega"];
+
+export const whyGary = [
+  "Honest recommendations",
+  "Quality craftsmanship",
+  "Reliable communication",
+  "Start-to-finish project support",
+  "Experienced gas line and HVAC expertise",
+  "Trusted local service",
+  "Attention to detail",
+  "Customer-first approach",
+];
+
 export const projectImages = [
   { src: "/images/projects/gas-meter-black-iron-regulator.jpg", alt: "Black iron gas piping and regulator at a gas meter", category: "Gas Piping" },
   { src: "/images/projects/two-psi-gas-manifold.jpg", alt: "Two PSI gas manifold with labeled black iron piping", category: "Gas Piping" },
@@ -174,15 +193,18 @@ export const services: Service[] = [
 ];
 
 export const serviceAreas: Area[] = [
-  { city: "Boise", slug: "boise", summary: "Gas piping, HVAC, water heater, and mechanical service for Boise homes, remodels, and builder projects." },
-  { city: "Meridian", slug: "meridian", summary: "Propane and natural gas piping, outdoor gas lines, and mechanical work for Meridian properties." },
-  { city: "Nampa", slug: "nampa", summary: "Gas line installation, underground fuel lines, HVAC support, and water heater work in Nampa." },
-  { city: "Caldwell", slug: "caldwell", summary: "Gas piping and mechanical services for Caldwell homes, shops, ADUs, and remodels." },
-  { city: "Eagle", slug: "eagle", summary: "Premium gas piping, outdoor living gas lines, and mechanical work for Eagle homes and custom projects." },
-  { city: "Kuna", slug: "kuna", summary: "Natural gas, propane, HVAC, and water heater support for Kuna residential and builder projects." },
-  { city: "Star", slug: "star", summary: "Gas piping installations, relocations, and mechanical work for Star homes and growing neighborhoods." },
-  { city: "Middleton", slug: "middleton", summary: "Gas line, propane, HVAC, and mechanical services for Middleton homes, shops, and outbuildings." },
-  { city: "Surrounding Treasure Valley", slug: "surrounding-treasure-valley", summary: "Service for surrounding Treasure Valley communities based on project type, schedule, and location." },
+  { city: "Boise", slug: "boise", summary: "HVAC contractor, gas piping, water heater, heating, cooling, and mechanical service for Boise homes, remodels, and builder projects." },
+  { city: "Meridian", slug: "meridian", summary: "Propane and natural gas piping, HVAC, outdoor gas lines, and mechanical work for Meridian properties." },
+  { city: "Nampa", slug: "nampa", summary: "Gas line installation, underground fuel lines, HVAC support, cooling service, heating service, and water heater work in Nampa." },
+  { city: "Caldwell", slug: "caldwell", summary: "Gas piping, propane service, HVAC, and mechanical services for Caldwell homes, shops, ADUs, and remodels." },
+  { city: "Eagle", slug: "eagle", summary: "Premium gas piping, outdoor living gas lines, HVAC, and mechanical work for Eagle homes and custom projects." },
+  { city: "Kuna", slug: "kuna", summary: "Natural gas, propane, HVAC, heating, cooling, and water heater support for Kuna residential and builder projects." },
+  { city: "Star", slug: "star", summary: "Gas piping installations, relocations, HVAC, propane service, and mechanical work for Star homes and growing neighborhoods." },
+  { city: "Middleton", slug: "middleton", summary: "Gas line, propane, HVAC, heating, cooling, and mechanical services for Middleton homes, shops, and outbuildings." },
+  { city: "Cascade", slug: "cascade", summary: "Heating services, cooling services, propane service, gas line installation, and HVAC contractor support for Cascade homes, cabins, and Valley County projects." },
+  { city: "Donnelly", slug: "donnelly", summary: "HVAC, heating, cooling, gas line installation, propane service, and home comfort projects for Donnelly homeowners and Valley County properties." },
+  { city: "McCall", slug: "mccall", summary: "HVAC contractor service, heating services, cooling services, propane systems, and gas line installation for McCall homes, cabins, remodels, and mechanical projects." },
+  { city: "Surrounding Treasure Valley", slug: "surrounding-treasure-valley", summary: "Service for surrounding Treasure Valley and Valley County communities based on project type, schedule, and location." },
 ];
 
 export const whyChoose = [

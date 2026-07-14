@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ShieldCheck, Wrench } from "lucide-react";
+import { ArrowRight, CheckCircle2, Handshake, MessageCircle, ShieldCheck, Wrench } from "lucide-react";
+import { BrandsCarousel } from "@/components/brands-carousel";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/cta-band";
+import { GoogleReviewCta } from "@/components/google-review-cta";
 import { PhotoGrid } from "@/components/photo-grid";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
-import { services, whyChoose } from "@/lib/data";
+import { serviceAreaSentence, services, whyGary } from "@/lib/data";
 
 const featuredServices = services.slice(0, 6);
 const benefits = [
@@ -38,8 +40,9 @@ export default function HomePage() {
           <div className="max-w-4xl">
             <h1 className="max-w-5xl text-5xl font-extrabold leading-[.92] tracking-tight md:text-7xl lg:text-8xl">Idaho&apos;s Gas Piping Specialist</h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-white/76 md:text-xl">
-              C&amp;B designs and installs safe, dependable gas piping and mechanical systems for homeowners, builders, remodels, ADUs, shops, pools, fire pits, water heaters, HVAC, and custom projects throughout the Treasure Valley.
+              C&amp;B designs and installs safe, dependable gas piping, propane, HVAC, heating, cooling, and mechanical systems for homeowners, builders, remodels, ADUs, shops, pools, fire pits, water heaters, and custom projects throughout Treasure Valley and Valley County.
             </p>
+            <p className="mt-5 max-w-3xl text-sm font-bold uppercase tracking-wide text-white/62">{serviceAreaSentence}</p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg"><Link href="tel:2089722102">Call Now</Link></Button>
               <Button asChild size="lg"><Link href="/contact">Request Free Estimate</Link></Button>
@@ -77,6 +80,54 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-zinc-950 px-4 py-20 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Meet Gary</p>
+            <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">Honest work, quality craftsmanship, and customer-first guidance.</h2>
+          </div>
+          <div className="space-y-5 text-lg leading-8 text-white/70">
+            <p>
+              Gary has built his reputation on honest work, quality craftsmanship, and taking care of customers the right way. With years of experience serving homeowners throughout Idaho, he understands every project is an investment in your home&apos;s comfort, safety, efficiency, and long-term value.
+            </p>
+            <p>
+              Whether a project involves heating and cooling equipment, gas lines, propane service, or coordinating with Intermountain Gas, Gary works to make the experience as straightforward and stress-free as possible.
+            </p>
+            <p className="font-black text-white">
+              His goal is simple: provide honest recommendations, quality workmanship, clear communication, and service that customers can trust for years to come.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl rounded-lg border border-zinc-200 bg-zinc-50 p-7 shadow-sm md:p-10">
+          <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Start-to-Finish Project Coordination</p>
+          <h2 className="text-3xl font-extrabold leading-tight text-zinc-950 md:text-5xl">One knowledgeable point of contact from planning to final installation.</h2>
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-zinc-600">
+            From equipment installation to coordinating with propane providers and Intermountain Gas, Gary helps guide the entire process so customers aren&apos;t left navigating multiple companies on their own. His goal is to make every project as smooth, simple, and stress-free as possible.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-zinc-100 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading eyebrow="Why Homeowners Choose Gary" title="Clear communication and dependable project support." />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {whyGary.map((item, index) => {
+              const icons = [CheckCircle2, Handshake, MessageCircle, ShieldCheck];
+              const Icon = icons[index % icons.length];
+              return (
+                <div key={item} className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm">
+                  <Icon className="mb-6 h-7 w-7 text-flame" />
+                  <h3 className="text-xl font-black text-zinc-950">{item}</h3>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-zinc-100 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -88,6 +139,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <BrandsCarousel />
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -113,8 +166,8 @@ export default function HomePage() {
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Project proof</p>
-              <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">Real C&amp;B work from the field.</h2>
-              <p className="mt-5 text-lg leading-8 text-white/65">A look at gas piping, pool heater lines, HVAC systems, water heaters, fire features, and sheet metal details.</p>
+              <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">Recent Projects</h2>
+              <p className="mt-5 text-lg leading-8 text-white/65">Take a look at some of our recent heating, cooling, gas line, and home comfort projects throughout Treasure Valley and Valley County.</p>
             </div>
             <Button asChild variant="secondary"><Link href="/gallery">View Full Gallery</Link></Button>
           </div>
@@ -124,17 +177,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      <GoogleReviewCta />
+
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
           <div id="why-choose">
             <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Why choose C&amp;B?</p>
             <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">Locally owned, trusted, and detail focused.</h2>
             <p className="mt-5 text-lg leading-8 text-zinc-600">
-              C&amp;B works on everything from custom homes and remodels to complete mechanical systems and specialty gas installations, with a primary focus on safe natural gas and propane systems.
+              C&amp;B works on everything from custom homes and remodels to complete mechanical systems and specialty gas installations, with a primary focus on safe natural gas and propane systems throughout Treasure Valley and Valley County.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
-            {whyChoose.map((item) => (
+            {whyGary.map((item) => (
               <div key={item} className="flex items-center gap-3 rounded-lg border border-zinc-200 bg-zinc-50 p-4">
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-flame" />
                 <span className="font-bold text-zinc-800">{item}</span>

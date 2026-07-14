@@ -39,3 +39,64 @@
     linear-gradient(90deg, rgba(255, 255, 255, .07) 1px, transparent 1px);
   background-size: 48px 48px;
 }
+
+.brand-carousel {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  scrollbar-width: none;
+}
+
+.brand-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.brand-track {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  gap: 1rem;
+  animation: brand-scroll 36s linear infinite;
+}
+
+.brand-carousel:hover .brand-track {
+  animation-play-state: paused;
+}
+
+.brand-logo {
+  display: grid;
+  min-width: 168px;
+  height: 86px;
+  place-items: center;
+  border: 1px solid hsl(var(--border));
+  border-radius: .5rem;
+  background: linear-gradient(180deg, #ffffff, #f5f5f5);
+  padding: 1rem 1.25rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .06);
+}
+
+.brand-logo span {
+  color: #18181b;
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+@keyframes brand-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - .5rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-track {
+    animation: none;
+  }
+}
