@@ -6,7 +6,7 @@ export function BrandsCarousel() {
   return (
     <section className="overflow-hidden bg-white px-4 py-14 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Brands We Trust</p>
           <h2 className="text-4xl font-extrabold leading-tight text-zinc-950 md:text-5xl">Industry-leading equipment and materials.</h2>
           <p className="mt-4 text-xl leading-8 text-zinc-600">

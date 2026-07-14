@@ -11,9 +11,8 @@ export function PhotoGrid({ limit }: { limit?: number }) {
           <div className="relative aspect-[4/3]">
             <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="(min-width: 1024px) 33vw, 100vw" priority={index < 2} />
           </div>
-          <figcaption className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
-            <span className="font-black text-zinc-950">{photo.category}</span>
-            <span className="text-zinc-500">C&amp;B project</span>
+          <figcaption className="px-4 py-3 text-center text-sm font-black uppercase tracking-wide text-zinc-700">
+            <span>C&amp;B Project</span>
           </figcaption>
         </figure>
       ))}

@@ -14,10 +14,10 @@ export default function ServiceAreasPage() {
   return (
     <main>
       <section className="bg-black px-4 py-16 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-5xl text-center">
           <p className="mb-4 text-xs font-black uppercase tracking-[.24em] text-flame">Service Areas</p>
-          <h1 className="max-w-5xl text-6xl font-black leading-[.95] tracking-tight md:text-8xl">Gas piping, HVAC, and mechanical service throughout Treasure Valley and Valley County.</h1>
-          <p className="mt-5 max-w-4xl text-xl leading-8 text-white/72">{serviceAreaSentence}</p>
+          <h1 className="text-6xl font-black leading-[.95] tracking-tight md:text-8xl">Gas piping, HVAC, and mechanical service throughout Treasure Valley and Valley County.</h1>
+          <p className="mx-auto mt-5 max-w-4xl text-xl leading-8 text-white/72">{serviceAreaSentence}</p>
         </div>
       </section>
       <section className="bg-white px-4 py-14 sm:px-6 lg:px-8">

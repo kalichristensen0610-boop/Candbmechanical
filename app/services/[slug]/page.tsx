@@ -32,10 +32,10 @@ export default async function ServiceDetailPage({ params }: Props) {
       <section className="relative overflow-hidden bg-black px-4 py-16 text-white sm:px-6 lg:px-8">
         <Image src={service.image} alt={service.title} fill className="object-cover opacity-48" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/84 to-black/18" />
-        <div className="relative mx-auto max-w-7xl">
+        <div className="relative mx-auto max-w-5xl text-center">
           <p className="mb-4 text-xs font-black uppercase tracking-[.24em] text-flame">{service.eyebrow}</p>
-          <h1 className="max-w-5xl text-6xl font-black leading-[.95] tracking-tight md:text-8xl">{service.title}</h1>
-          <p className="mt-5 max-w-3xl text-xl leading-8 text-white/72">{service.hero}</p>
+          <h1 className="text-6xl font-black leading-[.95] tracking-tight md:text-8xl">{service.title}</h1>
+          <p className="mx-auto mt-5 max-w-3xl text-xl leading-8 text-white/72">{service.hero}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild><Link href="/contact">Request Free Estimate</Link></Button>
             <Button asChild variant="secondary"><Link href="/gallery">View Project Photos</Link></Button>
@@ -51,7 +51,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               C&amp;B brings more than 27 years of mechanical experience to each project, with a focus on honest recommendations, clean workmanship, safe fuel delivery, HVAC expertise, propane service, Intermountain Gas coordination, and details that make the system easier to service in the future.
             </p>
             <p className="mt-4 text-xl leading-8 text-zinc-600">{serviceAreaSentence}</p>
-            <h2 className="mt-10 text-4xl font-black tracking-tight text-zinc-950">What this service can include</h2>
+            <h2 className="mt-10 text-center text-4xl font-black tracking-tight text-zinc-950">What this service can include</h2>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {service.bullets.map((item) => (
                 <div key={item} className="rounded-md border border-zinc-200 bg-zinc-50 p-4 font-bold text-zinc-800">{item}</div>

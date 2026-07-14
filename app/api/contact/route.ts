@@ -9,9 +9,9 @@ type ContactPayload = {
   message?: string;
 };
 
-const configuredRecipients = process.env.CONTACT_TO_EMAILS;
+const configuredRecipients = process.env.CONTACT_TO_EMAILS ?? "Kalichristensen0610@gmail.com,Gary@CandBMechanical.com";
 const resendApiKey = process.env.RESEND_API_KEY;
-const fromEmail = process.env.CONTACT_FROM_EMAIL ?? "C&B Website <onboarding@resend.dev>";
+const fromEmail = process.env.CONTACT_FROM_EMAIL ?? "C&B Website <website@candbmechanical.com>";
 
 export async function POST(request: Request) {
   try {

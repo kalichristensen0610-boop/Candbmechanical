@@ -23,12 +23,12 @@ export function SiteHeader() {
           <Dropdown label="Services" href="/services">
               <div className="grid w-[min(760px,calc(100vw-2rem))] grid-cols-2 gap-2 p-3">
                 {primaryServices.map((service) => (
-                  <Link key={service.slug} href={`/services/${service.slug}`} className="rounded-md p-3 hover:bg-zinc-100">
-                    <p className="font-extrabold text-zinc-950">{service.title}</p>
-                    <p className="mt-1 line-clamp-2 text-xs normal-case leading-5 tracking-normal text-zinc-600">{service.summary}</p>
+                  <Link key={service.slug} href={`/services/${service.slug}`} className="rounded-md border border-white/5 p-3 hover:bg-flame/20">
+                    <p className="font-extrabold text-white">{service.title}</p>
+                    <p className="mt-1 line-clamp-2 text-xs normal-case leading-5 tracking-normal text-white/66">{service.summary}</p>
                   </Link>
                 ))}
-                <Link href="/services" className="col-span-2 rounded-md bg-zinc-950 px-4 py-3 text-center font-extrabold text-white hover:bg-flame">
+                <Link href="/services" className="col-span-2 rounded-md bg-flame px-4 py-3 text-center font-extrabold text-white hover:bg-red-700">
                   View all services
                 </Link>
               </div>
@@ -36,7 +36,7 @@ export function SiteHeader() {
           <Dropdown label="Service Areas" href="/service-areas">
               <div className="grid w-[min(560px,calc(100vw-2rem))] grid-cols-3 gap-2 p-3">
                 {serviceAreas.map((area) => (
-                  <Link key={area.slug} href={`/service-areas/${area.slug}`} className="rounded-md p-3 font-extrabold text-zinc-900 hover:bg-zinc-100">
+                  <Link key={area.slug} href={`/service-areas/${area.slug}`} className="rounded-md border border-white/5 p-3 font-extrabold text-white hover:bg-flame/20">
                     {area.city}
                   </Link>
                 ))}
@@ -76,8 +76,8 @@ function Dropdown({ label, href, children }: { label: string; href: string; chil
         <ChevronDown className="h-3.5 w-3.5 transition group-hover:rotate-180" />
       </button>
       <div className="pointer-events-none absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
-        <div className="overflow-hidden rounded-lg border border-zinc-200 bg-white text-zinc-950 shadow-premium">
-          <Link href={href} className="block border-b border-zinc-200 px-6 py-4 text-sm font-extrabold text-zinc-950 hover:bg-zinc-100">
+        <div className="overflow-hidden rounded-lg border border-white/15 bg-zinc-950/96 text-white shadow-[0_30px_90px_rgba(0,0,0,.38)] backdrop-blur-xl">
+          <Link href={href} className="block border-b border-white/10 px-6 py-4 text-sm font-extrabold text-white hover:bg-flame/20">
             {label} Overview
           </Link>
           {children}

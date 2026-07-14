@@ -9,9 +9,9 @@ const reviewUrl =
 export function GoogleReviewCta() {
   return (
     <section id="reviews" className="bg-zinc-950 px-4 py-14 text-white sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-8 rounded-lg border border-white/10 bg-white/6 p-7 shadow-premium md:grid-cols-[1fr_auto] md:items-center">
+      <div className="mx-auto grid max-w-7xl gap-8 rounded-lg border border-white/10 bg-white/6 p-7 text-center shadow-premium md:grid-cols-[1fr_auto] md:items-center">
         <div>
-          <div className="mb-4 flex gap-1 text-flame" aria-hidden="true">
+          <div className="mb-4 flex justify-center gap-1 text-flame" aria-hidden="true">
             {Array.from({ length: 5 }).map((_, index) => (
               <Star key={index} className="h-5 w-5 fill-current" />
             ))}
