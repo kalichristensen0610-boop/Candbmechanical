@@ -53,15 +53,23 @@ export default function AboutPage() {
               When you work with Gary, you&apos;re working with someone who genuinely cares about doing the job right and standing behind his work.
             </p>
           </div>
-          <aside id="why-choose" className="rounded-lg bg-zinc-950 p-7 text-white shadow-premium">
-            <h2 className="text-3xl font-extrabold">Why Homeowners Choose Gary</h2>
-            <div className="mt-7 grid gap-3">
-              {whyGary.map((item) => (
-                <div key={item} className="flex items-center gap-3 rounded-md border border-white/10 bg-white/8 px-4 py-3 text-sm font-bold text-white/82">
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-flame" />
-                  {item}
-                </div>
-              ))}
+          <aside id="why-choose" className="grid gap-5">
+            <figure className="overflow-hidden rounded-lg border border-zinc-200 bg-zinc-50 shadow-premium">
+              <div className="relative aspect-[4/5]">
+                <Image src="/images/about/gary-family-photo.webp" alt="C&B owner Gary with family" fill className="object-cover" sizes="(min-width: 1024px) 35vw, 100vw" />
+              </div>
+              <figcaption className="px-5 py-4 text-sm font-bold text-zinc-600">Owner-led service with family values and local accountability.</figcaption>
+            </figure>
+            <div className="rounded-lg bg-zinc-950 p-7 text-white shadow-premium">
+              <h2 className="text-3xl font-extrabold">Why Homeowners Choose Gary</h2>
+              <div className="mt-7 grid gap-3">
+                {whyGary.map((item) => (
+                  <div key={item} className="flex items-center gap-3 rounded-md border border-white/10 bg-white/8 px-4 py-3 text-sm font-bold text-white/82">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-flame" />
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
           </aside>
         </div>
