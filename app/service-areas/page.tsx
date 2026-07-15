@@ -15,7 +15,7 @@ export default function ServiceAreasPage() {
     <main>
       <section className="bg-black px-4 py-16 text-white sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl text-center">
-          <p className="mb-4 text-xs font-black uppercase tracking-[.24em] text-flame">Service Areas</p>
+          <p className="mb-4 text-sm font-black uppercase tracking-[.24em] text-flame sm:text-base">Service Areas</p>
           <h1 className="text-6xl font-black leading-[.95] tracking-tight md:text-8xl">Gas piping, HVAC, and mechanical service throughout Treasure Valley and Valley County.</h1>
           <p className="mx-auto mt-5 max-w-4xl text-xl leading-8 text-white/72">{serviceAreaSentence}</p>
         </div>

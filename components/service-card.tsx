@@ -7,7 +7,7 @@ export function ServiceCard({ service }: { service: Service }) {
   return (
     <Link href={`/services/${service.slug}`} className="group overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-premium">
       <div className="relative aspect-[4/3] overflow-hidden bg-zinc-900">
-        <Image src={service.image} alt={service.title} fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(min-width: 1024px) 33vw, 100vw" />
+        <Image src={service.image} alt={service.imageAlt ?? service.title} fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(min-width: 1024px) 33vw, 100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/10 to-transparent" />
       </div>
       <div className="p-5 sm:p-6">

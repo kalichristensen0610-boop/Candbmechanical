@@ -17,7 +17,7 @@ export default function ServicesPage() {
         <Image src="/images/projects/pool-heater-gas-system.jpg" alt="Pool heater gas piping by C&B" fill className="object-cover opacity-48" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/82 to-black/20" />
         <div className="relative mx-auto max-w-5xl text-center">
-          <p className="mb-4 text-xs font-black uppercase tracking-[.24em] text-flame">Services</p>
+          <p className="mb-4 text-sm font-black uppercase tracking-[.24em] text-flame sm:text-base">Services</p>
           <h1 className="text-6xl font-black leading-[.95] tracking-tight md:text-8xl">Gas piping first. Full mechanical experience behind it.</h1>
           <p className="mx-auto mt-5 max-w-3xl text-xl leading-8 text-white/72">
             C&amp;B handles natural gas, propane, underground lines, outdoor living fuel lines, water heaters, HVAC systems, heating, cooling, mini splits, sheet metal, custom homes, remodels, ADUs, and Intermountain Gas coordination across Treasure Valley and Valley County.

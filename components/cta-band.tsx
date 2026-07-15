@@ -6,7 +6,7 @@ export function CtaBand({ title = "Ready to talk through your gas piping or mech
     <section className="bg-zinc-950 px-4 py-16 text-white sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 text-center lg:flex-row lg:justify-between">
         <div className="max-w-3xl">
-          <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Free estimates</p>
+          <p className="mb-3 text-sm font-black uppercase tracking-[.2em] text-flame sm:text-base">Free estimates</p>
           <h2 className="text-3xl font-black leading-tight md:text-5xl">{title}</h2>
           <p className="mt-4 text-white/65">{copy}</p>
         </div>

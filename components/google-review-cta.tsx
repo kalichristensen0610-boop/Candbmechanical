@@ -13,7 +13,7 @@ export function GoogleReviewCta() {
               <Star key={index} className="h-5 w-5 fill-current" />
             ))}
           </div>
-          <p className="text-xs font-black uppercase tracking-[.2em] text-flame">Google Reviews</p>
+          <p className="text-sm font-black uppercase tracking-[.2em] text-flame sm:text-base">Google Reviews</p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight md:text-5xl">Worked with us? We&apos;d love your feedback.</h2>
           <p className="mt-4 max-w-3xl text-xl leading-8 text-white/70">
             Reviews help local homeowners find a dependable contractor for HVAC, gas line installation, propane service, heating, cooling, and home comfort projects.

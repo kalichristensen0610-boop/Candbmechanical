@@ -13,7 +13,7 @@ export default function ContactPage() {
     <main>
       <section className="bg-black px-4 py-16 text-white sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-3 text-sm font-black uppercase tracking-[.2em] text-flame">Contact C&amp;B</p>
+          <p className="mb-3 text-base font-black uppercase tracking-[.2em] text-flame">Contact C&amp;B</p>
           <h1 className="text-6xl font-black leading-[.95] tracking-tight md:text-8xl">Request Service</h1>
           <p className="mx-auto mt-5 max-w-3xl text-xl leading-8 text-white/72">
             Tell C&amp;B about your project. We provide free estimates. Please fill out the information below, and a member of our team will get back to you as soon as possible.

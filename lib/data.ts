@@ -5,6 +5,7 @@ export type Service = {
   summary: string;
   hero: string;
   image: string;
+  imageAlt?: string;
   bullets: string[];
   category: "Gas Piping" | "Outdoor Living" | "Mechanical";
 };
@@ -128,7 +129,8 @@ export const services: Service[] = [
     eyebrow: "Outdoor fire features",
     summary: "Gas piping for custom fire pits, fire bowls, and patio fire features using propane or natural gas.",
     hero: "Outdoor fire features with dependable fuel supply.",
-    image: "/images/projects/outdoor-fire-pit.jpg",
+    image: "/images/services/stone-gas-fire-pit-idaho.webp",
+    imageAlt: "Stone gas fire pit with warm flames and outdoor seating in an Idaho backyard",
     bullets: ["Fire pit gas lines", "Fire table hookups", "Outdoor shutoffs", "Propane or natural gas", "Piping ready for startup"],
     category: "Outdoor Living",
   },
@@ -138,7 +140,8 @@ export const services: Service[] = [
     eyebrow: "Backyard fuel lines",
     summary: "Gas lines for built-in grills, outdoor kitchens, patio appliances, and backyard entertainment areas.",
     hero: "Permanent fuel lines for outdoor cooking and gathering.",
-    image: "/images/projects/pool-equipment-pad-piping.webp",
+    image: "/images/services/outdoor-bbq-kitchen-idaho.webp",
+    imageAlt: "Built-in gas barbecue and stone outdoor kitchen in an Idaho backyard",
     bullets: ["Built in grill lines", "Outdoor kitchen piping", "Patio appliance hookups", "Buried fuel routes", "Serviceable shutoff locations"],
     category: "Outdoor Living",
   },

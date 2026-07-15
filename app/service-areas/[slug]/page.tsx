@@ -33,7 +33,7 @@ export default async function ServiceAreaDetailPage({ params }: Props) {
         <Image src="/images/projects/residential-gas-meter-upgrade.jpg" alt="C&B gas piping service area" fill className="object-cover opacity-42" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/86 to-black/25" />
         <div className="relative mx-auto max-w-5xl text-center">
-          <p className="mb-4 text-xs font-black uppercase tracking-[.24em] text-flame">{area.city}</p>
+          <p className="mb-4 text-sm font-black uppercase tracking-[.24em] text-flame sm:text-base">{area.city}</p>
           <h1 className="text-6xl font-black leading-[.95] tracking-tight md:text-8xl">HVAC, gas piping, and mechanical services in {area.city}.</h1>
           <p className="mx-auto mt-5 max-w-3xl text-xl leading-8 text-white/72">{area.summary}</p>
           <Button asChild className="mt-8"><Link href="/contact">Request Service in {area.city}</Link></Button>

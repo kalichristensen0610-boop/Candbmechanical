@@ -8,7 +8,7 @@ export function BrandsCarousel() {
     <section className="overflow-hidden bg-white px-4 py-14 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Brands We Work With</p>
+          <p className="mb-3 text-sm font-black uppercase tracking-[.2em] text-flame sm:text-base">Brands We Work With</p>
           <h2 className="text-4xl font-extrabold leading-tight text-zinc-950 md:text-5xl">Industry-leading equipment and materials.</h2>
           <p className="mt-4 text-xl leading-8 text-zinc-600">
             We partner with industry-leading manufacturers to provide dependable heating, cooling, gas, and home comfort solutions built to last.

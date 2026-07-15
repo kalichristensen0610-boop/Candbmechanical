@@ -3,7 +3,7 @@ import Image from "next/image";
 import { CtaBand } from "@/components/cta-band";
 import { GoogleReviewCta } from "@/components/google-review-cta";
 import { SectionHeading } from "@/components/section-heading";
-import { serviceAreaSentence, whyChoose } from "@/lib/data";
+import { whyChoose } from "@/lib/data";
 import { CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -18,12 +18,7 @@ export default function AboutPage() {
         <Image src="/images/projects/sheet-metal-ductwork.jpg" alt="C&B sheet metal ductwork" fill className="object-cover opacity-42" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/88 to-black/30" />
         <div className="relative mx-auto max-w-5xl text-center">
-          <p className="mb-4 text-xs font-black uppercase tracking-[.24em] text-flame">About C&amp;B</p>
           <h1 className="text-6xl font-black leading-[.95] tracking-tight md:text-8xl">About C&amp;B</h1>
-          <p className="mx-auto mt-5 max-w-3xl text-xl leading-8 text-white/72">
-            Honest service, clean workmanship, and dependable gas piping and mechanical work throughout Idaho.
-          </p>
-          <p className="mt-5 max-w-4xl text-sm font-bold uppercase tracking-wide text-white/62">{serviceAreaSentence}</p>
         </div>
       </section>
 

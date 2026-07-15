@@ -60,7 +60,7 @@ export default function HomePage() {
 
       <section className="bg-zinc-950 px-4 py-14 text-white sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-3 text-sm font-black uppercase tracking-[.2em] text-flame">About C&amp;B</p>
+          <p className="mb-3 text-base font-black uppercase tracking-[.2em] text-flame">About C&amp;B</p>
           <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">Trusted gas piping work done right.</h2>
           <p className="mt-5 text-xl leading-8 text-white/72">
             C&amp;B is known for honest work, dependable service, and clean gas piping installations for homes, shops, remodels, outdoor living spaces, and mechanical projects.
@@ -106,7 +106,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col items-center gap-6 text-center">
             <div className="max-w-3xl">
-              <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Project proof</p>
+              <p className="mb-3 text-sm font-black uppercase tracking-[.2em] text-flame sm:text-base">Project proof</p>
               <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">Recent Projects</h2>
               <p className="mt-4 text-xl leading-8 text-white/70">Take a look at recent heating, cooling, gas line, and home comfort projects throughout Treasure Valley and Valley County.</p>
             </div>
@@ -123,7 +123,7 @@ export default function HomePage() {
       <section className="bg-white px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
           <div id="why-choose" className="text-center">
-            <p className="mb-3 text-xs font-black uppercase tracking-[.2em] text-flame">Why choose C&amp;B?</p>
+            <p className="mb-3 text-sm font-black uppercase tracking-[.2em] text-flame sm:text-base">Why choose C&amp;B?</p>
             <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">Locally owned, trusted, and detail focused.</h2>
             <p className="mt-4 text-xl leading-8 text-zinc-600">
               C&amp;B works on everything from custom homes and remodels to complete mechanical systems and specialty gas installations, with a primary focus on safe natural gas and propane systems throughout Treasure Valley and Valley County.

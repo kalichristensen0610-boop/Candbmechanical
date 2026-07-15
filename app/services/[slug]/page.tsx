@@ -33,7 +33,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         <Image src={service.image} alt={service.title} fill className="object-cover opacity-48" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/84 to-black/18" />
         <div className="relative mx-auto max-w-5xl text-center">
-          <p className="mb-4 text-xs font-black uppercase tracking-[.24em] text-flame">{service.eyebrow}</p>
+          <p className="mb-4 text-sm font-black uppercase tracking-[.24em] text-flame sm:text-base">{service.eyebrow}</p>
           <h1 className="text-6xl font-black leading-[.95] tracking-tight md:text-8xl">{service.title}</h1>
           <p className="mx-auto mt-5 max-w-3xl text-xl leading-8 text-white/72">{service.hero}</p>
           <div className="mt-8 flex flex-wrap gap-3">
