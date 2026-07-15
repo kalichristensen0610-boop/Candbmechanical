@@ -9,7 +9,6 @@ export function ServiceCard({ service }: { service: Service }) {
       <div className="relative aspect-[4/3] overflow-hidden bg-zinc-900">
         <Image src={service.image} alt={service.title} fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(min-width: 1024px) 33vw, 100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/10 to-transparent" />
-        <p className="absolute bottom-4 left-4 rounded-full bg-flame px-3 py-1.5 text-sm font-black uppercase tracking-wide text-white">{service.category}</p>
       </div>
       <div className="p-5 sm:p-6">
         <div className="flex items-start justify-between gap-4">

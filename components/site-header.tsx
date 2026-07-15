@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -106,17 +107,18 @@ function MobileMenu() {
             </Dialog.Close>
           </div>
           <nav className="mt-6 grid gap-6">
-            <MobileLink href="/">Home</MobileLink>
             <MobileLink href="/about">About</MobileLink>
-            <MobileGroup title="Services" href="/services">
+            <MobileGroup title="Services">
               {services.map((service) => <MobileLink key={service.slug} href={`/services/${service.slug}`}>{service.title}</MobileLink>)}
             </MobileGroup>
-            <MobileGroup title="Service Areas" href="/service-areas">
+            <MobileGroup title="Service Areas">
               {serviceAreas.map((area) => <MobileLink key={area.slug} href={`/service-areas/${area.slug}`}>{area.city}</MobileLink>)}
             </MobileGroup>
             <MobileLink href="/gallery">Gallery</MobileLink>
-            <MobileLink href="/contact">Contact</MobileLink>
-            <MobileLink href="tel:2089722102">Call 208-972-2102</MobileLink>
+            <MobileLink href="/contact">Contact Us</MobileLink>
+            <Button asChild className="mt-1 h-14 w-full text-base">
+              <Link href="tel:2089722102">Call Now</Link>
+            </Button>
           </nav>
         </Dialog.Content>
       </Dialog.Portal>
@@ -134,11 +136,25 @@ function MobileLink({ href, children }: { href: string; children: React.ReactNod
   );
 }
 
-function MobileGroup({ title, href, children }: { title: string; href: string; children: React.ReactNode }) {
+function MobileGroup({ title, children }: { title: string; children: React.ReactNode }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div>
-      <MobileLink href={href}>{title}</MobileLink>
-      <div className="mt-2 grid gap-1 border-l border-white/15 pl-3 text-sm">{children}</div>
+    <div className="rounded-lg border border-white/10 bg-white/[.03]">
+      <button
+        type="button"
+        onClick={() => setIsOpen((open) => !open)}
+        className="flex w-full items-center justify-between gap-3 rounded-lg px-3 py-3 text-left text-base font-black text-white"
+        aria-expanded={isOpen}
+      >
+        {title}
+        <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+      <div className={`grid overflow-hidden transition-[grid-template-rows] duration-300 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+        <div className="min-h-0">
+          <div className="grid gap-1 border-t border-white/10 p-2 text-sm">{children}</div>
+        </div>
+      </div>
     </div>
   );
 }

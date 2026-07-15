@@ -23,7 +23,17 @@ export const seoServiceAreaSentence =
 
 export const googleReviewUrl = "https://www.google.com/search?q=c+%26+be+mechincal+nampa";
 
-export const trustedBrands = ["Ruud", "Rheem", "ecobee", "Payne", "Navien", "Samsung", "Honeywell", "Gastite", "Viega"];
+export const trustedBrands = [
+  { name: "Ruud", logo: "/images/brands/ruud.png" },
+  { name: "Rheem", logo: "/images/brands/rheem.svg" },
+  { name: "ecobee", logo: "/images/brands/ecobee.svg" },
+  { name: "Payne" },
+  { name: "Navien", logo: "/images/brands/navien.png" },
+  { name: "Samsung", logo: "/images/brands/samsung.svg" },
+  { name: "Honeywell", logo: "/images/brands/honeywell.svg" },
+  { name: "Gastite" },
+  { name: "Viega", logo: "/images/brands/viega.svg" },
+];
 
 export const whyGary = [
   "Honest recommendations",

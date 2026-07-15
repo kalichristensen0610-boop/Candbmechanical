@@ -31,9 +31,9 @@ export default function HomePage() {
       </section>
 
       <section className="bg-zinc-950 px-4 py-5 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-5">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-3">
           {["27+ Years", "Established 2017", "Licensed", "Bonded", "Insured"].map((item) => (
-            <div key={item} className="rounded-md border border-red-400/40 bg-flame px-4 py-4 text-center text-base font-black uppercase tracking-wide text-white shadow-lg">
+            <div key={item} className="min-w-[155px] rounded-full bg-white px-5 py-3 text-center text-sm font-black uppercase tracking-wide text-flame shadow-[0_12px_30px_rgba(0,0,0,.22)] ring-1 ring-white/70 sm:text-base">
               {item}
             </div>
           ))}

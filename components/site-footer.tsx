@@ -46,6 +46,10 @@ export function SiteFooter() {
       <div className="border-t border-white/10 px-4 py-4 text-center text-sm font-bold uppercase tracking-wide text-white/45">
         C&amp;B Mechanical. Licensed, bonded, and insured. Established 2017.
       </div>
+      <div className="border-t border-white/10 px-4 py-4 text-center text-xs font-bold uppercase tracking-[.12em] text-white/40">
+        <p>&copy; 2026 C&amp;B Gas Piping. All Rights Reserved.</p>
+        <p className="mt-1">Developed &amp; Designed by Christensen &amp; Co. Agency</p>
+      </div>
     </footer>
   );
 }

@@ -57,8 +57,9 @@
   display: flex;
   width: max-content;
   min-width: 100%;
-  gap: 1rem;
-  animation: brand-scroll 36s linear infinite;
+  gap: 1.1rem;
+  animation: brand-scroll 38s linear infinite;
+  touch-action: pan-x;
 }
 
 .brand-carousel:hover .brand-track {
@@ -67,14 +68,19 @@
 
 .brand-logo {
   display: grid;
-  min-width: 168px;
-  height: 86px;
+  min-width: 174px;
+  height: 92px;
   place-items: center;
   border: 1px solid hsl(var(--border));
   border-radius: .5rem;
-  background: linear-gradient(180deg, #ffffff, #f5f5f5);
+  background: #ffffff;
   padding: 1rem 1.25rem;
   box-shadow: 0 12px 32px rgba(0, 0, 0, .06);
+}
+
+.brand-logo img {
+  display: block;
+  filter: saturate(.98) contrast(1.02);
 }
 
 .brand-logo span {
