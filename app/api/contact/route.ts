@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+
+export const runtime = "nodejs";
 
 type ContactPayload = {
   name?: string;
@@ -10,20 +13,24 @@ type ContactPayload = {
 };
 
 const configuredRecipients = process.env.CONTACT_TO_EMAILS ?? "Kalichristensen0610@gmail.com,Gary@CandBMechanical.com";
-const resendApiKey = process.env.RESEND_API_KEY;
-const fromEmail = process.env.CONTACT_FROM_EMAIL ?? "C&B Website <website@candbmechanical.com>";
+const smtpHost = process.env.SMTP_HOST;
+const smtpPort = Number(process.env.SMTP_PORT ?? 465);
+const smtpSecure = (process.env.SMTP_SECURE ?? "true").toLowerCase() !== "false";
+const smtpUser = process.env.SMTP_USER;
+const smtpPass = process.env.SMTP_PASS;
+const fromEmail = process.env.CONTACT_FROM_EMAIL ?? (smtpUser ? `C&B Website <${smtpUser}>` : undefined);
 
 export async function POST(request: Request) {
   try {
-    const payload = (await request.json()) as ContactPayload;
+    const payload = normalizePayload((await request.json()) as ContactPayload);
     const required = ["name", "phone", "email", "service", "location", "message"] as const;
-    const missing = required.some((key) => !payload[key]?.trim());
+    const missing = required.some((key) => !payload[key]);
 
     if (missing) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    if (!resendApiKey || !configuredRecipients) {
+    if (!smtpHost || !smtpUser || !smtpPass || !fromEmail || !configuredRecipients) {
       return NextResponse.json({ error: "Email delivery is not configured" }, { status: 500 });
     }
 
@@ -49,22 +56,28 @@ export async function POST(request: Request) {
       payload.message,
     ].join("\n");
 
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${resendApiKey}`,
-        "Content-Type": "application/json",
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpSecure,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
       },
-      body: JSON.stringify({
-        from: fromEmail,
-        to: recipients,
-        subject,
-        text,
-        reply_to: payload.email,
-      }),
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 15000,
     });
 
-    if (!response.ok) {
+    try {
+      await transporter.sendMail({
+        from: fromEmail,
+        to: recipients,
+        replyTo: payload.email,
+        subject,
+        text,
+      });
+    } catch {
       return NextResponse.json({ error: "Email delivery failed" }, { status: 502 });
     }
 
@@ -72,4 +85,15 @@ export async function POST(request: Request) {
   } catch {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
+}
+
+function normalizePayload(payload: ContactPayload): Required<ContactPayload> {
+  return {
+    name: payload.name?.trim() ?? "",
+    phone: payload.phone?.trim() ?? "",
+    email: payload.email?.trim() ?? "",
+    service: payload.service?.trim() ?? "",
+    location: payload.location?.trim() ?? "",
+    message: payload.message?.trim() ?? "",
+  };
 }
