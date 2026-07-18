@@ -4,10 +4,13 @@ const { readFile } = require("node:fs/promises");
 const { extname, join, normalize } = require("node:path");
 const tls = require("node:tls");
 const net = require("node:net");
+const next = require("next");
 
 const port = Number(process.env.PORT || 3000);
 const root = process.cwd();
-const publicDir = existsSync(join(root, ".next", "index.html")) ? join(root, ".next") : join(root, "out");
+const staticDir = existsSync(join(root, ".next", "index.html")) ? join(root, ".next") : existsSync(join(root, "out", "index.html")) ? join(root, "out") : null;
+const app = staticDir ? null : next({ dev: false });
+const nextHandler = app ? app.getRequestHandler() : null;
 
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
@@ -25,7 +28,7 @@ const mimeTypes = {
   ".php": "text/plain; charset=utf-8",
 };
 
-createServer(async (request, response) => {
+async function requestHandler(request, response) {
   try {
     const url = new URL(request.url || "/", `http://${request.headers.host || "localhost"}`);
 
@@ -39,17 +42,33 @@ createServer(async (request, response) => {
       return;
     }
 
-    serveStatic(url.pathname, request, response);
+    if (staticDir) {
+      serveStatic(url.pathname, request, response);
+      return;
+    }
+
+    await nextHandler(request, response);
   } catch (error) {
     console.error(error);
     sendJson(response, 500, { error: "Server error" });
   }
-}).listen(port, () => {
-  console.log(`C&B static site serving ${publicDir} on port ${port}`);
-});
+}
+
+const start = () => {
+  createServer(requestHandler).listen(port, () => {
+    console.log(staticDir ? `C&B static site serving ${staticDir} on port ${port}` : `C&B Next app serving on port ${port}`);
+  });
+};
+
+if (app) {
+  app.prepare().then(start);
+} else {
+  start();
+}
 
 function serveStatic(pathname, request, response) {
   const cleanPath = decodeURIComponent(pathname).replace(/^\/+/, "");
+  const publicDir = staticDir;
   const candidates = [];
 
   if (!cleanPath || cleanPath.endsWith("/")) {
