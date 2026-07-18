@@ -18,27 +18,19 @@ export function ContactForm() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const values = Object.fromEntries(formData.entries());
-    const subject = encodeURIComponent(`C&B estimate request from ${values.name}`);
-    const body = encodeURIComponent(
-      [
-        "New website estimate request",
-        "",
-        `Name: ${values.name}`,
-        `Phone: ${values.phone}`,
-        `Email: ${values.email}`,
-        `Service requested: ${values.service}`,
-        `Property/project location: ${values.location}`,
-        "",
-        "Message:",
-        values.message,
-      ].join("\n"),
-    );
 
-    window.location.href = `mailto:Gary@CandBMechanical.com,Kalichristensen0610@gmail.com?subject=${subject}&body=${body}`;
+    const response = await fetch("/contact.php", {
+      method: "POST",
+      body: formData,
+    });
 
-    form.reset();
-    setStatus("success");
+    if (response.ok) {
+      form.reset();
+      setStatus("success");
+      return;
+    }
+
+    setStatus("error");
   }
 
   return (
@@ -74,7 +66,7 @@ export function ContactForm() {
       </Button>
       {status === "success" ? (
         <p className="rounded-md border border-green-200 bg-green-50 p-4 font-bold text-green-800">
-          Thank you! Your email app should open with your project details ready to send. You can also call C&amp;B directly at 208-972-2102.
+          Thank you! Your request has been sent. A member of the C&amp;B team will contact you shortly.
         </p>
       ) : null}
       {status === "error" ? (
