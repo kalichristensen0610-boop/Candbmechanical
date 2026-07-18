@@ -7,7 +7,7 @@ export function PhotoGrid({ limit }: { limit?: number }) {
   return (
     <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
       {photos.map((photo, index) => (
-        <figure key={photo.src} className="mb-4 break-inside-avoid overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm">
+        <figure key={photo.src} className="hover-lift mb-4 break-inside-avoid overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm">
           <div className="relative aspect-[4/3]">
             <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="(min-width: 1024px) 33vw, 100vw" priority={index < 2} />
           </div>

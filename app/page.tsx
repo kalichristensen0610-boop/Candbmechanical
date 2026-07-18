@@ -7,6 +7,7 @@ import { CtaBand } from "@/components/cta-band";
 import { GoogleReviewCta } from "@/components/google-review-cta";
 import { PhotoGrid } from "@/components/photo-grid";
 import { SectionHeading } from "@/components/section-heading";
+import { ServiceAreaMap } from "@/components/service-area-map";
 import { ServiceCard } from "@/components/service-card";
 import { services, whyChoose } from "@/lib/data";
 
@@ -15,16 +16,20 @@ const featuredServices = services.slice(0, 6);
 export default function HomePage() {
   return (
     <main>
-      <section className="relative isolate min-h-[calc(82vh-5rem)] overflow-hidden bg-zinc-950 text-white">
-        <Image src="/images/hero/idaho-backyard-gas-firepit.webp" alt="Idaho backyard outdoor living space with a built-in gas fire pit" fill className="object-cover object-center opacity-90" priority />
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/72 via-zinc-950/58 to-zinc-950/78" />
+      <section className="relative isolate min-h-[calc(94vh-5rem)] overflow-hidden bg-zinc-950 text-white sm:min-h-[calc(98vh-5rem)]">
+        <Image src="/images/hero/idaho-backyard-gas-firepit.webp" alt="Idaho backyard outdoor living space with a built-in gas fire pit" fill className="hero-image-motion object-cover object-center opacity-95" priority />
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/78 via-zinc-950/48 to-zinc-950/86" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(214,32,39,.18),transparent_34%)]" />
-        <div className="relative mx-auto flex min-h-[calc(82vh-5rem)] max-w-7xl items-center justify-center px-4 py-14 text-center sm:px-6 lg:px-8">
-          <div className="max-w-5xl">
-            <h1 className="mx-auto max-w-5xl text-6xl font-extrabold leading-[.9] tracking-tight sm:text-7xl md:text-8xl lg:text-8xl">Idaho&apos;s Gas Piping Specialist</h1>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button asChild size="lg"><Link href="tel:2089722102">Call Now</Link></Button>
-              <Button asChild size="lg"><Link href="/contact">Request Free Estimate</Link></Button>
+        <div className="relative mx-auto flex min-h-[calc(94vh-5rem)] max-w-7xl items-center justify-center px-4 py-20 text-center sm:min-h-[calc(98vh-5rem)] sm:px-6 lg:px-8">
+          <div className="reveal-up max-w-5xl">
+            <p className="mb-5 text-base font-black uppercase tracking-[.22em] text-white/78 sm:text-lg">Natural Gas • Propane • Mechanical</p>
+            <h1 className="mx-auto max-w-5xl text-6xl font-extrabold leading-[.88] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">Idaho&apos;s Gas Piping Specialist</h1>
+            <p className="mx-auto mt-6 max-w-3xl text-xl leading-8 text-white/78 sm:text-2xl">
+              Clean, dependable gas piping and mechanical work for homes, shops, remodels, outdoor living spaces, and equipment upgrades.
+            </p>
+            <div className="mt-9 flex flex-wrap justify-center gap-4">
+              <Button asChild size="lg" className="rounded-full px-8 shadow-[0_18px_46px_rgba(214,32,39,.32)]"><Link href="tel:2089722102">Call Now</Link></Button>
+              <Button asChild size="lg" variant="secondary" className="rounded-full px-8"><Link href="/contact">Request Free Estimate</Link></Button>
             </div>
           </div>
         </div>
@@ -50,7 +55,7 @@ export default function HomePage() {
               "Outdoor living gas lines",
               "HVAC and water heaters",
             ].map((item) => (
-              <div key={item} className="rounded-lg border border-zinc-300 bg-zinc-200/80 p-6 text-center text-xl font-extrabold text-zinc-950 shadow-sm">
+              <div key={item} className="hover-lift reveal-up rounded-lg border border-zinc-300 bg-zinc-200/80 p-6 text-center text-xl font-extrabold text-zinc-950 shadow-sm">
                 {item}
               </div>
             ))}
@@ -58,7 +63,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-zinc-950 px-4 py-14 text-white sm:px-6 lg:px-8">
+      <section className="reveal-up bg-zinc-950 px-4 py-14 text-white sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-3 text-base font-black uppercase tracking-[.2em] text-flame">About C&amp;B</p>
           <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">Trusted gas piping work done right.</h2>
@@ -83,6 +88,8 @@ export default function HomePage() {
 
       <BrandsCarousel />
 
+      <ServiceAreaMap />
+
       <section className="bg-white px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionHeading eyebrow="Process" title="Clear steps. Clean work." copy="C&B reviews the project, installs the system, and tests the work before the job is complete." />
@@ -92,7 +99,7 @@ export default function HomePage() {
               ["02", "Build the system", "The work is installed with clean routing, practical shutoff access, and detail focused craftsmanship."],
               ["03", "Test and finish", "New and repaired gas piping can be pressure tested before equipment startup or inspection follow up."],
             ].map(([step, title, copy]) => (
-              <div key={step} className="rounded-lg border border-zinc-200 bg-zinc-50 p-7">
+              <div key={step} className="hover-lift reveal-up rounded-lg border border-zinc-200 bg-zinc-50 p-7">
                 <p className="text-sm font-black text-flame">{step}</p>
                 <h3 className="mt-8 text-center text-2xl font-black text-zinc-950">{title}</h3>
                 <p className="mt-3 text-zinc-600">{copy}</p>

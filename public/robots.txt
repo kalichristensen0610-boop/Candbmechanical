@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://candbmechanicalandgas.com/sitemap.xml

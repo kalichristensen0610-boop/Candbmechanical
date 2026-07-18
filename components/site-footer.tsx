@@ -46,9 +46,23 @@ export function SiteFooter() {
       <div className="border-t border-white/10 px-4 py-4 text-center text-sm font-bold uppercase tracking-wide text-white/45">
         C&amp;B Mechanical. Licensed, bonded, and insured. Established 2017.
       </div>
+      <nav className="border-t border-white/10 px-4 py-5 text-center text-xs font-black uppercase tracking-[.14em] text-white/50">
+        <div className="mx-auto flex max-w-5xl flex-wrap justify-center gap-x-5 gap-y-3">
+          <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+          <Link href="/terms-and-conditions" className="hover:text-white">Terms &amp; Conditions</Link>
+          <Link href="/accessibility-statement" className="hover:text-white">Accessibility</Link>
+          <Link href="/transparency-policy" className="hover:text-white">Transparency</Link>
+          <Link href="/html-sitemap" className="hover:text-white">HTML Sitemap</Link>
+        </div>
+      </nav>
       <div className="border-t border-white/10 px-4 py-4 text-center text-xs font-bold uppercase tracking-[.12em] text-white/40">
         <p>&copy; 2026 C&amp;B Gas Piping. All Rights Reserved.</p>
-        <p className="mt-1">Developed &amp; Designed by Christensen &amp; Co. Agency</p>
+        <p className="mt-1">
+          Site developed by{" "}
+          <Link href="https://ChristensenAndCoAgency.com" target="_blank" rel="noopener noreferrer" className="text-white/62 hover:text-white">
+            Christensen &amp; Co. Agency
+          </Link>
+        </p>
       </div>
     </footer>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { StickyCta } from "@/components/sticky-cta";
 import { seoServiceAreaSentence, serviceAreas, services } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <SiteHeader />
         {children}
+        <StickyCta />
         <SiteFooter />
       </body>
     </html>
