@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { seoServiceAreaSentence, serviceAreas, services } from "@/lib/data";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-
 export const metadata: Metadata = {
-  metadataBase: new URL("http://127.0.0.1:3000"),
+  metadataBase: new URL("https://candbmechanicalandgas.com"),
   title: {
     default: "C&B | HVAC, Gas Piping, Propane & Mechanical in Idaho",
     template: "%s | C&B",
@@ -58,7 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <html lang="en">
-      <body className={inter.variable}>
+      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

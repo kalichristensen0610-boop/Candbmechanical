@@ -49,7 +49,7 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        sans: ["Arial", "Helvetica", "system-ui", "sans-serif"],
       },
       boxShadow: {
         premium: "0 24px 70px rgba(0, 0, 0, .18)",
