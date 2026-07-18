@@ -67,9 +67,12 @@ export async function POST(request: Request) {
 }
 
 export function GET() {
+  const missing = getMissingEmailSettings();
+
   return NextResponse.json({
     ok: true,
-    emailConfigured: Boolean(getEmailSettings()),
+    emailConfigured: missing.length === 0,
+    missing,
   });
 }
 
@@ -101,27 +104,27 @@ type MailMessage = {
 };
 
 function getEmailSettings(): EmailSettings | null {
-  const host = process.env.SMTP_HOST;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const recipients = (process.env.CONTACT_TO_EMAILS ?? "Kalichristensen0610@gmail.com,Gary@CandBMechanical.com")
-    .split(",")
-    .map((email) => email.trim())
-    .filter(Boolean);
-
-  if (!host || !user || !pass || recipients.length === 0) {
+  if (getMissingEmailSettings().length > 0) {
     return null;
   }
 
+  const host = process.env.SMTP_HOST;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+
   return {
-    host,
+    host: host as string,
     port: Number(process.env.SMTP_PORT ?? 465),
     secure: (process.env.SMTP_SECURE ?? "true").toLowerCase() !== "false",
-    user,
-    pass,
-    from: process.env.CONTACT_FROM_EMAIL ?? `C&B Website <${user}>`,
-    recipients,
+    user: user as string,
+    pass: pass as string,
+    from: `C&B Website <${user}>`,
+    recipients: ["Kalichristensen0610@gmail.com", "Gary@CandBMechanical.com"],
   };
+}
+
+function getMissingEmailSettings() {
+  return ["SMTP_HOST", "SMTP_USER", "SMTP_PASS"].filter((key) => !process.env[key]);
 }
 
 async function sendSmtpMail(settings: EmailSettings, message: MailMessage) {
