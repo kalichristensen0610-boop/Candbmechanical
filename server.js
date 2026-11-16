@@ -118,12 +118,38 @@ async function handleContact(request, response) {
     return;
   }
 
+  if (!await verifyEstimateToken(fields["cf-turnstile-response"])) {
+    sendJson(response, 403, { error: "Verification failed" });
+    return;
+  }
+
   try {
     await sendMail(fields);
     sendJson(response, 200, { ok: true });
   } catch (error) {
     console.error("Contact form email failed:", error.message);
     sendJson(response, 500, { error: "Email delivery failed" });
+  }
+}
+
+async function verifyEstimateToken(token) {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret || typeof token !== "string" || !token || token.length > 2048) return false;
+
+  try {
+    const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body: new URLSearchParams({ secret, response: token }),
+      signal: AbortSignal.timeout(5000),
+    });
+    if (!response.ok) return false;
+
+    const result = await response.json();
+    const hostnames = (process.env.TURNSTILE_ALLOWED_HOSTNAMES ||
+      "candbmechanicalandgas.com,www.candbmechanicalandgas.com").split(",").map((host) => host.trim());
+    return result.success === true && result.action === "estimate" && hostnames.includes(result.hostname);
+  } catch {
+    return false;
   }
 }
 
