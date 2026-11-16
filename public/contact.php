@@ -8,7 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 function field($name) {
-  return trim($_POST[$name] ?? '');
+  $value = $_POST[$name] ?? '';
+  return is_string($value) ? trim($value) : '';
 }
 
 $name = field('name');
@@ -27,6 +28,37 @@ if ($name === '' || $phone === '' || $email === '' || $service === '' || $locati
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   http_response_code(400);
   echo json_encode(['error' => 'Invalid email']);
+  exit;
+}
+
+function verify_estimate_token($token) {
+  $secret = getenv('TURNSTILE_SECRET_KEY');
+  if (!$secret || $token === '' || strlen($token) > 2048 || !function_exists('curl_init')) {
+    return false;
+  }
+
+  $request = curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');
+  curl_setopt_array($request, [
+    CURLOPT_POST => true,
+    CURLOPT_POSTFIELDS => http_build_query(['secret' => $secret, 'response' => $token]),
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_TIMEOUT => 5,
+  ]);
+  $body = curl_exec($request);
+  $status = curl_getinfo($request, CURLINFO_RESPONSE_CODE);
+  curl_close($request);
+
+  $result = is_string($body) && $status === 200 ? json_decode($body, true) : null;
+  $allowed = getenv('TURNSTILE_ALLOWED_HOSTNAMES') ?: 'candbmechanicalandgas.com,www.candbmechanicalandgas.com';
+  $hostnames = array_map('trim', explode(',', $allowed));
+  return ($result['success'] ?? false) === true &&
+    ($result['action'] ?? '') === 'estimate' &&
+    in_array($result['hostname'] ?? '', $hostnames, true);
+}
+
+if (!verify_estimate_token(field('cf-turnstile-response'))) {
+  http_response_code(403);
+  echo json_encode(['error' => 'Verification failed']);
   exit;
 }
 
